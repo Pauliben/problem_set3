@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[ ]:
 
 
 #Problem 1
@@ -23,7 +23,7 @@ max_water_level = fhand[fhand[' Water Level'] == water_level]
 print(f"The average water level was recorded on {max_water_level['Date Time'].to_string(index=False)}")
 
 
-# In[3]:
+# In[ ]:
 
 
 #Problem 2
@@ -39,18 +39,18 @@ for line in contain_max_water_level.index:
 
 #Average water level
 avg_water_level = sum(water_level_dat)/len(water_level_dat)
-print(f"The average water level on 2018-10-10 is {avg_water_level}")
+print(f"The average water level is {round(avg_water_level,3)} on 2018-10-10")
 
 #Highest water level
 highest_water_level = contain_max_water_level[contain_max_water_level[' Water Level'] == contain_max_water_level[' Water Level'].max()]
-print(f"The highest water level on 2018-10-10 is {highest_water_level['Date Time'].to_string(index=False)}")
+print(f"The highest water level is {highest_water_level[' Water Level'].to_string(index=False)} on {highest_water_level['Date Time'].to_string(index=False)}")
 
 #Lowest water level
 lowest_water_level = contain_max_water_level[contain_max_water_level[' Water Level'] == contain_max_water_level[' Water Level'].min()]
-print(f"The lowest water level on 2018-10-10 is {lowest_water_level['Date Time'].to_string(index=False)}")
+print(f"The lowest water level is {lowest_water_level[' Water Level'].to_string(index=False)} on {lowest_water_level['Date Time'].to_string(index=False)}")
 
 
-# In[4]:
+# In[ ]:
 
 
 #Problem 3
@@ -69,7 +69,7 @@ max_water_rise_dat = fhand[fhand[' Water Level'] == water_level]
 print(f"The maximum water level occured on {max_water_rise_dat['Date Time'].to_string(index=False)}")
 
 
-# In[5]:
+# In[ ]:
 
 
 #Problem 4
