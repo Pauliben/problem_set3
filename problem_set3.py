@@ -86,13 +86,11 @@ for line in fhand.index:
             water_rise = fhand[fhand[' Water Level'] == new_water_level]
             water_rise = water_rise['Date Time']
             print(f"Warning: Water level increases more than 0.25. Water level rise by {round(diff_water_level,2)} at {water_rise.to_string(index=False)}")
-        if diff_water_level > 0.5:
-            water_rise = fhand[fhand[' Water Level'] == new_water_level]
-            water_rise = water_rise['Date Time']
-            print(f"Warning: Water level increases more than 0.5. Water level rise by {round(diff_water_level,2)} at {water_rise.to_string(index=False)}")
+        if new_water_level > 5:
+            water_level_gt_5 = fhand[fhand[' Water Level'] == new_water_level]
+            water_level_gt_5 = water_level_gt_5['Date Time']
+            print(f"Warning: Water level greater than 5. Water level is {round(new_water_level,2)} at {water_level_gt_5.to_string(index=False)}")
         if str(new_water_level) == 'nan':
-            #water_rise = fhand[fhand[' Water Level'] == 'nan']
-            #water_rise = water_rise['Date Time']
             print(f"Warning: No reading is received at {fhand.loc[line,'Date Time']}")
 
 
